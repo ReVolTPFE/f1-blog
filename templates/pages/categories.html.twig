@@ -1,0 +1,57 @@
+{% extends "base.html.twig" %}
+
+{% block title %}Catégories{% endblock %}
+
+{% block main %}
+
+<section class="tag_section">
+	<h2 class="tag_title">Vous trouverez ci-dessous la totalité de nos catégories.</h2>
+
+	{% for item in data %}
+		<article>
+			<a href="/?page=articles&tag={{ item.name }}">
+				<div>
+					<h2>{{ item.name }}</h2>
+				</div>
+			</a>
+		</article>
+	{% endfor %}
+
+	<article>
+		<h2 class="tag_title">Créer une catégorie :</h2>
+
+		<form class="form" action="/?page=categories&action=create" method="POST">
+			<input class="form__input" type="text" name="name">
+			<input class="form__input" type="submit" name="create_category" value="Valider">
+		</form>
+	</article>
+
+	<article>
+		<h2 class="tag_title">Mettre à jour une catégorie :</h2>
+
+		<form class="form" action="/?page=categories&action=update" method="POST">
+			<select class="form__input" name="category_id">
+				{% for item in data %}
+					<option value="{{ item.category_id }}">{{ item.name }}</option>
+				{% endfor %}
+			</select>
+			<input class="form__input" type="text" name="name">
+			<input class="form__input" type="submit" name="update_category" value="Valider">
+		</form>
+	</article>
+
+	<article>
+		<h2 class="tag_title">Supprimer une catégorie :</h2>
+
+		<form class="form" action="/?page=categories&action=delete" method="POST">
+			<select class="form__input" name="category_id">
+				{% for item in data %}
+					<option value="{{ item.category_id }}">{{ item.name }}</option>
+				{% endfor %}
+			</select>
+			<input class="form__input" type="submit" name="delete_category" value="Valider">
+		</form>
+	</article>
+</section>
+
+{% endblock %}

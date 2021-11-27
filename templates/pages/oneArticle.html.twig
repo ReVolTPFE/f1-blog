@@ -1,0 +1,54 @@
+{% extends "base.html.twig" %}
+
+{% block title %}{{ data.title }}{% endblock %}
+
+{% block main %}
+
+<section class="one_article">
+	<a class="btn" href="/?page=articles&action=update&id={{ data.article_id }}">Mettre à jour l'article</a>
+	<a class="btn" href="/?page=articles&action=delete&id={{ data.article_id }}">Supprimer l'article</a>
+
+	<br>
+
+	<div class="article__tags">
+		{% for category in categories %}
+			{% if category.category_id == tag1 %}
+				<i>{{ category.name }}</i>
+			{% endif %}
+		{% endfor %}
+
+		{% for category in categories %}
+			{% if category.category_id == tag2 and tag1 != tag2 %}
+				<i>{{ category.name }}</i>
+			{% endif %}
+		{% endfor %}
+	</div>
+
+
+	<h1 class="article__title">{{ data.title }}</h1>
+
+	<img class="article__photo" src="/img/articles/{{ data.photo }}" alt="">
+
+	<p class="article__content">{{ data.content }}</p>
+
+	<hr>
+
+	<p class="article__date">{{ data.creation_date }}</p>
+
+	<p class="article__author">Auteur : {{ data.author }}</p>
+</section>
+
+{% endblock %}
+
+{% block aside %}
+
+<section class="aside_block">
+	<h2>Liste de tous les articles :</h2>
+	{% for article in allArticles %}
+		{% if article.article_id != data.article_id %}
+			<a class="other_article" href="/?page=articles&id={{ article.article_id }}">{{ article.title }}</a>
+		{% endif %}
+	{% endfor %}
+</section>
+
+{% endblock %}

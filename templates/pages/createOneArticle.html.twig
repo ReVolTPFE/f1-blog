@@ -1,0 +1,49 @@
+{% extends "base.html.twig" %}
+
+{% block title %}Créer un article{% endblock %}
+
+{% block main %}
+
+<section class="form_section">
+	<form class="form" action="/?page=articles&action=create" method="POST" enctype="multipart/form-data">
+		<label for="title">Titre</label>
+		<input class="form__input" type="text" name="title">
+		<label for="photo">Photo</label>
+		<input class="form__input" type="file" name="photo">
+		<label for="content">Contenu</label>
+		<textarea class="form__area" name="content" cols="30" rows="10"></textarea>
+		<label for="author">Auteur</label>
+		<input class="form__input" type="text" name="author">
+		<label for="category_id">Catégorie 1</label>
+		<select class="form__input" name="category_id">
+			<option value="5" selected>Aucun</option>
+			{% for item in data %}
+				<option value="{{ item.category_id }}">{{ item.name }}</option>
+			{% endfor %}
+		</select>
+		<label for="category2_id">Catégorie 2</label>
+		<select class="form__input" name="category2_id">
+			<option value="5" selected>Aucun</option>
+			{% for item in data %}
+				<option value="{{ item.category_id }}">{{ item.name }}</option>
+			{% endfor %}
+		</select>
+		<input class="form__input" type="submit" name="create_article" value="Valider">
+	</form>
+</section>
+
+<!-- <section>
+	<h1>{{ data.title }}</h1>
+
+	<img src="{{ data.photo }}" alt="{{ data.photo }}">
+
+	<p>{{ data.content }}</p>
+
+	<hr>
+
+	<p>{{ data.creation_date }}</p>
+
+	<p>{{ data.author }}</p>
+</section> -->
+
+{% endblock %}

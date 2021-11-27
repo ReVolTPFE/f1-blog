@@ -1,0 +1,18 @@
+{% extends "base.html.twig" %}
+
+{% block title %}Accueil{% endblock %}
+
+{% block main %}
+
+<section class="main__home">
+	<h2>Bienvenue sur ce blog traitant de l'actualité de la Formule 1 !</h2>
+	<p>Ce blog rassemble de nombreux articles sur les courses, les transferts, les dramas et plus encore.</p>
+</section>
+
+<section class="main__home">
+	<p>Vous trouverez ci-dessous nos articles les plus récents.</p>
+
+	{% block card %}{% endblock %}
+</section>
+
+{% endblock %}

@@ -1,0 +1,44 @@
+{% extends "base.html.twig" %}
+
+{% block title %}Mettre à jour un article{% endblock %}
+
+{% block main %}
+
+<section class="form_section">
+	<form class="form" action="/?page=articles&action=update&id={{ data.article_id }}" method="POST" enctype="multipart/form-data">
+		<label for="title">Titre</label>
+		<input class="form__input" type="text" name="title" value="{{ data.title }}">
+		<label for="content">Contenu</label>
+		<textarea class="form__area" name="content" cols="30" rows="10">{{ data.content }}</textarea>
+		<label for="author">Auteur</label>
+		<input class="form__input" type="text" name="author" value="{{ data.author }}">
+		<label for="category_id">Catégorie 1</label>
+		<select class="form__input" name="category_id">
+			{% for item in categories %}
+				{% if tag1 == item.category_id %}
+					<option selected="selected" value="{{ tag1 }}">{{ item.name }}</option>
+				{% else %}
+					{% if item.category_id != tag2 %}
+						<option value="{{ item.category_id }}">{{ item.name }}</option>
+					{% endif %}
+				{% endif %}
+			{% endfor %}
+		</select>
+
+		<label for="category2_id">Catégorie 2</label>
+		<select class="form__input" name="category2_id">
+			{% for item in categories %}
+				{% if tag2 == item.category_id %}
+					<option selected="selected" value="{{ tag2 }}">{{ item.name }}</option>
+				{% else %}
+					{% if item.category_id != tag1 %}
+						<option value="{{ item.category_id }}">{{ item.name }}</option>
+					{% endif %}
+				{% endif %}
+			{% endfor %}
+		</select>
+		<input class="form__input" type="submit" name="update_article" value="Valider">
+	</form>
+</section>
+
+{% endblock %}

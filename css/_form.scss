@@ -1,0 +1,23 @@
+.form {
+	display: flex;
+	justify-content: center;
+	flex-direction: column;
+
+	&__input {
+		margin: 10px auto;
+		font-size: 20px;
+		width: 500px;
+		height: 40px;
+	}
+
+	&__area {
+		margin: 10px auto;
+		font-size: 20px;
+		width: 500px;
+	}
+}
+
+.form_section {
+	margin: 30px;
+	width: 100%;
+}

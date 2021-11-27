@@ -1,0 +1,25 @@
+{% extends "base.html.twig" %}
+
+{% block title %}Articles{% endblock %}
+
+{% block main %}
+
+<section class="article_page">
+	<h2>Vous trouverez ci-dessous la totalité de nos articles.</h2>
+
+	<article class="article">
+		{% for item in data %}
+				<a class="article__card list" href="/?page=articles&id={{ item.article_id }}">
+					<div>
+						<h2 class="article__card__title">{{ item.title }}</h2>
+						<p class="article__card__tags"><i>{{ item.name }}</i> <i>{{ item.6 }}</i></p>
+						<p class="article__card__author">Auteur : {{ item.author }}</p>
+						<img class="article__card__image" src="/img/articles/{{ item.photo }}" alt="">
+					</div>
+				</a>
+			
+		{% endfor %}
+	</article>
+</section>
+
+{% endblock %}

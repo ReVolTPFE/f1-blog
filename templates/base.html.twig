@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+
+        <link rel="stylesheet" href="./css/main.min.css">
+
+        <title>F1-Blog : {% block title %}{% endblock %}</title>
+    </head>
+    <body>
+        {% block header %}
+            {% include 'layouts/header.l.html.twig' %}
+        {% endblock %}
+
+        <div class="wrap">
+            <main class="main">
+                {% block main %}{% endblock %}
+            </main>
+    
+            <aside class="aside">
+                {% block aside %}{% endblock %}
+            </aside>
+        </div>
+
+        {% block footer %}
+            {% include 'layouts/footer.l.html.twig' %}
+        {% endblock %}
+    </body>
+</html>
