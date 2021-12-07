@@ -1,0 +1,26 @@
+.dark-mode-bg {
+	background-color: #333;
+}
+
+.dark-mode-font {
+	a, p, li, h1, h2, h3, h4, h5, h6, i, label, input {
+		color: white;
+	}
+}
+
+.dark-mode-border {
+	border: 1px solid white !important;
+}
+
+.dark-mode-input {
+	input, textarea, select {
+		color: white;
+		border: 1px solid white !important;
+		background-color: #555;
+	}
+
+	input[type=file] {
+		background: none !important;
+		border: none !important;
+	}
+}

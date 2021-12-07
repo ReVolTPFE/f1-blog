@@ -7,7 +7,7 @@
 
         <title>F1-Blog : {% block title %}{% endblock %}</title>
     </head>
-    <body>
+    <body class="switch-bg switch-font switch-input">
         {% block header %}
             {% include 'layouts/header.l.html.twig' %}
         {% endblock %}
@@ -25,5 +25,7 @@
         {% block footer %}
             {% include 'layouts/footer.l.html.twig' %}
         {% endblock %}
+
+        <script src="./js/dark-mode.js"></script>
     </body>
 </html>

@@ -9,10 +9,10 @@
 
 	<article class="article">
 		{% for item in data %}
-				<a class="article__card list" href="/?page=articles&id={{ item.article_id }}">
+				<a class="article__card list switch-border" href="/?page=articles&id={{ item.article_id }}">
 					<div>
 						<h2 class="article__card__title">{{ item.title }}</h2>
-						<p class="article__card__tags"><i>{{ item.name }}</i> <i>{{ item.6 }}</i></p>
+						<p class="article__card__tags"><i class="switch-border">{{ item.name }}</i> <i class="switch-border">{{ item.6 }}</i></p>
 						<p class="article__card__author">Auteur : {{ item.author }}</p>
 						<img class="article__card__image" src="/img/articles/{{ item.photo }}" alt="">
 					</div>

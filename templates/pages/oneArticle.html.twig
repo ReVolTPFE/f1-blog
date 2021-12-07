@@ -13,13 +13,13 @@
 	<div class="article__tags">
 		{% for category in categories %}
 			{% if category.category_id == tag1 %}
-				<i>{{ category.name }}</i>
+				<i class="switch-border">{{ category.name }}</i>
 			{% endif %}
 		{% endfor %}
 
 		{% for category in categories %}
 			{% if category.category_id == tag2 and tag1 != tag2 %}
-				<i>{{ category.name }}</i>
+				<i class="switch-border">{{ category.name }}</i>
 			{% endif %}
 		{% endfor %}
 	</div>

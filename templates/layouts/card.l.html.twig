@@ -4,7 +4,7 @@
 
 <article class="article">
 	{% for item in data %}
-		<a class="article__card" href="/?page=articles&id={{ item.article_id }}">
+		<a class="article__card switch-border" href="/?page=articles&id={{ item.article_id }}">
 			<div>
 				<h2 class="article__card__title">{{ item.title }}</h2>
 				<p class="article__card__author">Auteur : {{ item.author }}</p>
