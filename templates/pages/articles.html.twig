@@ -7,19 +7,44 @@
 <section class="article_page">
 	<h2>Vous trouverez ci-dessous la totalité de nos articles.</h2>
 
+	<h3 class="filter-title">Filtrage par catégorie :</h3>
+	<p>Par défaut : Catégorie "Tous"</p>
+	<div class="filtering">
+		<a class="filter-link">Tous</a>
+
+		{% for category in categories %}
+			<a class="filter-link">{{ category.name }}</a>
+		{% endfor %}
+	</div>
+
+	<h3 class="filter-title2">Filtrage avancé :</h3>
+	<p>Par défaut : Tri du + récent au + ancien</p>
+	<div>
+		<a class="sort-link sort-date-btn">Tri + récent au + ancien</a>
+		<a class="sort-link sort-alphabetic-btn">Tri A-Z</a>
+	</div>
+
+	<h3 class="filter-title3">Recherche par titre :</h3>
+	<p>Si une catégorie est sélectionnée, seuls les articles de cette catégorie seront recherché.</p>
+	<input type="search" placeholder="Recherche" id="research">
+
 	<article class="article">
 		{% for item in data %}
-				<a class="article__card list switch-border" href="/?page=articles&id={{ item.article_id }}">
-					<div>
-						<h2 class="article__card__title">{{ item.title }}</h2>
-						<p class="article__card__tags"><i class="switch-border">{{ item.name }}</i> <i class="switch-border">{{ item.6 }}</i></p>
-						<p class="article__card__author">Auteur : {{ item.author }}</p>
-						<img class="article__card__image" src="/img/articles/{{ item.photo }}" alt="">
-					</div>
-				</a>
-			
+			<a class="article__card list switch-border" href="/?page=articles&id={{ item.article_id }}">
+				<div>
+					<h2 class="article__card__title">{{ item.title }}</h2>
+					<p class="article__card__tags"><i class="switch-border">{{ item.name }}</i> <i class="switch-border">{{ item.6 }}</i></p>
+					<p class="article__card__author">Auteur : {{ item.author }}</p>
+					<p class="article__card__author">{{ item.creation_date|date('d/m/Y') }}</p>
+					<img class="article__card__image" src="/img/articles/{{ item.photo }}" alt="">
+				</div>
+			</a>
 		{% endfor %}
 	</article>
 </section>
+
+<script src="./js/sortering.js"></script>
+<script src="./js/research.js"></script>
+<script src="./js/pagination.js"></script>
 
 {% endblock %}

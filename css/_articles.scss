@@ -49,3 +49,49 @@
 		}
 	}
 }
+
+.filtering {
+	display: flex;
+	justify-content: center;
+
+	a {
+		cursor: pointer;
+		margin: 10px;
+		background-color: #333;
+		padding: 10px;
+		color: white;
+	}
+}
+
+.filter-title {
+	margin: 20px 0 10px 0;
+}
+
+.filter-title2 {
+	margin: 20px 0 10px 0;
+}
+
+.filter-title2+p {
+	margin-bottom: 20px;
+}
+
+.sort-link {
+	cursor: pointer;
+	margin: 10px;
+	background-color: #333;
+	padding: 10px;
+	color: white;
+}
+
+.filter-title3 {
+	margin: 40px 0 10px 0;
+}
+
+#research {
+	text-align: center;
+	width: 300px;
+	height: 30px;
+
+	margin-top: 15px;
+	margin-bottom: 20px;
+}

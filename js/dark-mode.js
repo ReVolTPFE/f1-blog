@@ -3,6 +3,8 @@ let bgSwitch = document.querySelectorAll(".switch-bg");
 let fontSwitch = document.querySelectorAll(".switch-font");
 let borderSwitch = document.querySelectorAll(".switch-border");
 let inputSwitch = document.querySelectorAll(".switch-input");
+let filterLinkSwitch = document.querySelectorAll(".filter-link");
+let sortLinkSwitch = document.querySelectorAll(".sort-link");
 
 darkModeBtn.addEventListener("click", () => {
 	bgSwitch.forEach(elt => {
@@ -19,6 +21,14 @@ darkModeBtn.addEventListener("click", () => {
 
 	inputSwitch.forEach(elt => {
 		elt.classList.toggle("dark-mode-input");
+	});
+
+	filterLinkSwitch.forEach(elt => {
+		elt.classList.toggle("dark-mode-filter-link");
+	});
+
+	sortLinkSwitch.forEach(elt => {
+		elt.classList.toggle("dark-mode-filter-link");
 	});
 
 	darkModeBtn.classList.toggle("dark-mode-enabled");

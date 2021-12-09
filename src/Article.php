@@ -34,8 +34,9 @@ class Article extends Skeleton {
 					echo $twig->render("pages/oneArticle.html.twig", ["data" => $data, "tag1" => $tag1, "tag2" => $tag2, "categories" => $categories, "allArticles" => $allArticles]);
 				} else {
 					$data = Article::readAll($pdo);
+					$categories = Category::readAll($pdo);
 
-					echo $twig->render("pages/articles.html.twig", ["data" => $data]);
+					echo $twig->render("pages/articles.html.twig", ["data" => $data, "categories" => $categories]);
 				}
 			break;
 			case "update":

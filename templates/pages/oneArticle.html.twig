@@ -27,9 +27,18 @@
 
 	<h1 class="article__title">{{ data.title }}</h1>
 
-	<img class="article__photo" src="/img/articles/{{ data.photo }}" alt="">
+	<div class="article__photo">
+		<h3 class="show-hide"><i class="fas fa-chevron-down"></i> Image</h3>
 
-	<p class="article__content">{{ data.content }}</p>
+		<img class="lightbox-img" src="/img/articles/{{ data.photo }}" alt="">
+		<div class="lightbox-bg"></div>
+	</div>
+
+	<div class="article__content">
+		<h3 class="show-hide"><i class="fas fa-chevron-down"></i> Contenu</h3>
+
+		<p>{{ data.content }}</p>
+	</div>
 
 	<hr>
 
@@ -37,6 +46,8 @@
 
 	<p class="article__author">Auteur : {{ data.author }}</p>
 </section>
+
+<script src="./js/lightbox.js"></script>
 
 {% endblock %}
 

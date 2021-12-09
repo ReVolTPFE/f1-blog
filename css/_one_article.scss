@@ -54,16 +54,66 @@
 
 	&__photo {
 		margin: 20px;
-		width: 800px;
-		height: 600px;
+
+		h3 {
+			text-align: left;
+			cursor: pointer;
+		}
+
+		img {
+			width: 400px;
+			height: 300px;
+		}
 	}
 
 	&__content {
-		font-size: 20px;
-		margin: 30px;
+		margin: 20px;
+
+		h3 {
+			text-align: left;
+			cursor: pointer;
+		}
+
+		p {
+			font-size: 20px;
+		}
 	}
 
 	&__date {
 		margin: 20px;
 	}
+}
+
+.hide-elt {
+	display: none;
+}
+
+.show-elt {
+	display: block;
+}
+
+.lightbox-img {
+	z-index: 3;
+	cursor: pointer;
+}
+
+.lightbox-img--activated {
+	position: fixed !important;
+	top: 50% !important;
+	left: 50% !important;
+	transform: translate(-50%, -50%) !important;
+	width: 95vw !important;
+	height: 95vh !important;
+
+}
+
+.lightbox-bg {
+	display: none;
+	z-index: 2;
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100vw;
+	height: 100vh;
+	background-color: rgba(61, 61, 61, 0.685);
 }
